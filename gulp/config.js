@@ -7,12 +7,12 @@ module.exports = {
   'serverPort'   : 3002,
 
   'styles': {
-    'src' : 'app/styles/**/*.scss',
+    'src' : 'app/**/*.scss',
     'dest': 'build/css'
   },
 
   'scripts': {
-    'src' : 'app/js/**/*.js',
+    'src' : 'app/**/*.js',
     'dest': 'build/js'
   },
 
@@ -29,10 +29,10 @@ module.exports = {
   'views': {
     'watch': [
       'app/index.html',
-      'app/views/**/*.html'
+      'app/**/*.html'
     ],
-    'src': 'app/views/**/*.html',
-    'dest': 'app/js'
+    'src': ['app/**/*.html', '!app/index.html'],
+    'dest': 'app/'
   },
 
   'gzip': {
@@ -46,7 +46,7 @@ module.exports = {
   },
 
   'browserify': {
-    'entries'   : ['./app/js/main.js'],
+    'entries'   : ['./app/main.js'],
     'bundleName': 'main.js',
     'sourcemap' : true
   },
